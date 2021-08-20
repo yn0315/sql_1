@@ -158,6 +158,22 @@ WHERE EMP_NM LIKE '이%'
 AND SEX_CD <> 1;  --남자가 아닌 사원추출 != 와 같은 의미!! 
 
 
+--AND와 OR의 우선순위
+SELECT
+    EMP_NO, EMP_NM, ADDR, DEPT_CD
+FROM TB_EMP
+WHERE EMP_NM LIKE '이%'
+    AND DEPT_CD IN('100004', '100006')
+    AND (ADDR LIKE '%수원%' OR ADDR LIKE '%성남%');
+    --OR앞에까지를 한 덩어리로 보기 때문에 다 만족하는 사람을 
+    --추출하려면 OR문은 괄호로 쳐줘야 함
+
+SELECT
+    EMP_NO, EMP_NM, ADDR, DEPT_CD
+FROM TB_EMP
+WHERE EMP_NM LIKE '이%'
+    AND DEPT_CD IN('100004', '100006')
+    AND NOT(ADDR LIKE '%수원%' OR ADDR LIKE '%성남%');
 
 
 
