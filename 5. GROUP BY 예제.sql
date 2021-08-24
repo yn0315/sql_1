@@ -37,7 +37,7 @@ MAX(birth_de)AS "부서 막내",
 MIN(birth_de)AS "부서 연장자"
 FROM tb_emp
 GROUP BY dept_cd
-HAVING COUNT(*)>=2
+HAVING COUNT(*)>=2 --1명 이상의 부서만 추출하라
 ORDER BY dept_cd;
 
 
@@ -127,6 +127,12 @@ FROM tb_emp
 ORDER BY eno DESC;
 
 
+SELECT
+ emp_nm --41건 나옴
+ --COUNT(emp_no) AS cnt--1건 나옴, 그룹함수임, 일반컬럼하고 쓰면 안됨, 집계함수끼리 써야함
+FROM tb_emp;
+
+--ORDER BY는 항상 맨 마지막..
 
 
 
