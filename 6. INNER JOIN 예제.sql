@@ -142,6 +142,18 @@ WHERE A.emp_no = B.emp_no
     AND A.dept_cd = D.dept_cd
 ;
 
+SELECT 
+    A.emp_no, A.emp_nm, D.dept_nm, B.acqu_de, B.certi_cd, C.certi_nm
+FROM tb_emp A 
+JOIN tb_emp_certi B
+ON A.emp_no = B.emp_no
+JOIN tb_certi C
+ON B.certi_cd = C.certi_cd
+JOIN tb_dept D
+ON A.dept_cd = D.dept_cd
+;
+
+
 SELECT
 E.emp_no, E.emp_nm, E.addr, E.dept_cd, D.dept_nm 
 FROM tb_emp E 
@@ -158,6 +170,8 @@ ORDER BY E.emp_no;
 -- GROUP BY  열을 그룹화 -- HAVING하고 순서바뀔 수 있음
 -- HAVING    그룹화 조건
 -- ORDER BY  정렬할 열 [ASC | DESC];
+
+
 
 
 
