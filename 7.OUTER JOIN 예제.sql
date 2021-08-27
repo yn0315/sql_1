@@ -116,4 +116,42 @@ FROM tb_emp A
 FULL JOIN tb_dept B
 ON A.dept_cd = B.dept_cd;
 
+--SELF JOIN
+--1. 자기자신의 테이블을 조인하는 개념입니다.
+--2. 자기 테이블의 컬럼들을 매칭하여 조회하는 기법입니다.
+--SNS에서 팔로우 목록 같은거 셀프조인..
+SELECT
+a.emp_no, a.emp_nm, a.direct_manager_emp_no, b.emp_nm
+FROM tb_emp A, tb_emp B
+WHERE a.direct_manager_emp_no = b.emp_no;--a의 상사번호와 b의 사원번호가 일치하는 정보
+
+
+DELETE FROM tb_dept WHERE dept_cd IN ('100014', '100015');
+
+DELETE FROM tb_emp WHERE emp_no IN ('1000000041', '1000000042', '1000000043', '1000000044', '1000000045');
+
+COMMIT;
+
+ALTER TABLE tb_emp 
+ADD CONSTRAINT fk_tb_emp01 
+FOREIGN KEY (dept_cd) 
+REFERENCES tb_dept (dept_cd);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
