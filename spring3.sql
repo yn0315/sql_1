@@ -21,3 +21,4 @@ INSERT INTO score VALUES(seq_score.nextval, '±èÃ¶¼ö', 80,80,80,240,80);
 INSERT INTO score VALUES(seq_score.nextval, '¹Ú¿µÈñ', 100,100,100,300,100);
 INSERT INTO score VALUES(seq_score.nextval, '¸Á³ª´Ï', 100,100,100,300,100);
 COMMIT;--Ä¿¹Ô ²ÀÇØ¾ßÇÔ!!!!!!
+
